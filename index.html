@@ -184,7 +184,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-23 09:42:46" itemprop="dateModified" datetime="2022-03-23T09:42:46+08:00">2022-03-23</time>
+                <time title="Modified: 2022-03-23 15:24:33" itemprop="dateModified" datetime="2022-03-23T15:24:33+08:00">2022-03-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -238,7 +238,7 @@
 <p>在正常的系统使用自然不会报错，不过我替换了Windows的字体、</p>
 <p>虽然报错提示我查看CBS.log（<del>不过这个文件包含太多无效的信息</del>）</p>
 <p><strong>使用以下指令获取报错文件的位置</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">findstr /c:<span class="string">&#x27;[SR]&#x27;</span> %windir%LogsCBSCBS.log &gt; C:sfclogs.txt<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">findstr /c:<span class="string">&quot;[SR]&quot;</span> %windir%\Logs\CBS\CBS.log &gt; <span class="string">&quot;%userprofile%\Desktop\sfcdetails.txt&quot;</span> </span><br></pre></td></tr></table></figure>
 
 <h4 id="Windows-低分屏字体优化"><a href="#Windows-低分屏字体优化" class="headerlink" title="Windows 低分屏字体优化"></a>Windows 低分屏字体优化</h4><p>这些文章网络上已经有很多了，我在此着重我的经验</p>
 <p>关于MacType，几年前也曾尝试过这款软件，不过偶尔会失效还伴随着崩溃和卡顿😂</p>
