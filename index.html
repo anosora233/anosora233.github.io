@@ -176,10 +176,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-04-17 13:42:32 / 修改时间：14:15:49" itemprop="dateCreated datePublished" datetime="2022-04-17T13:42:32+08:00">2022-04-17</time>
+              <time title="创建时间：2022-04-17 13:42:32" itemprop="dateCreated datePublished" datetime="2022-04-17T13:42:32+08:00">2022-04-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-19 13:32:15" itemprop="dateModified" datetime="2022-04-19T13:32:15+08:00">2022-04-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -202,12 +208,111 @@
 
       
           <h3 id="Windows-Defender-快速添加排除目录"><a href="#Windows-Defender-快速添加排除目录" class="headerlink" title="Windows Defender 快速添加排除目录"></a>Windows Defender 快速添加排除目录</h3><p>在使用 Scoop 时偶然了解了 PowerShell 的部分指令</p>
-<p>现在需要通过GUI界面实现的功能现在仅仅只需要一行指令即可实现</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">Add-MpPreference</span> <span class="literal">-ExclusionPath</span> <span class="string">&#x27;[directory]&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>以前需要通过GUI界面实现的功能现在仅仅只需要一行指令即可实现</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">Add-MpPreference</span> <span class="literal">-ExclusionPath</span> <span class="string">&#x27;[directory]&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##[directory]：需要排除的目录（绝对路径）</span></span><br></pre></td></tr></table></figure>
 
-<p>[directory]：需要排除的目录（绝对目录）</p>
 <p>还有许多有效且便利的 PowerShell 指令.</p>
 <p>具体可以参考 Microsoft 的<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/powershell/module/defender/add-mppreference">官方文档</a>.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/23/sfc-tools/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="LarX">
+      <meta itemprop="description" content="An Essay Pool">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HexO">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/23/sfc-tools/" class="post-title-link" itemprop="url">系统扫描工具日志查看</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-23 12:01:45" itemprop="dateCreated datePublished" datetime="2022-03-23T12:01:45+08:00">2022-03-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-19 13:30:59" itemprop="dateModified" datetime="2022-04-19T13:30:59+08:00">2022-04-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="系统扫描工具日志查看"><a href="#系统扫描工具日志查看" class="headerlink" title="系统扫描工具日志查看"></a>系统扫描工具日志查看</h3><p>最近由于在咸鱼挂了台旧电脑，我学习了 dism++ 的相关知识。</p>
+<p>除了将旧电脑的系统在保留驱动的情况下部署到Windows10 21H2之外</p>
+<p>（该操作在 dism++下相当简单，此外 Windows 11 和 Windows 10 的驱动完全通用）</p>
+<p>（<del>11不就是换了个皮肤吗？</del>）</p>
+<p>我也偶然学习了SFC修复工具的使用（<del>实际上只学了一句指令</del>）</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SFC /scannow</span><br></pre></td></tr></table></figure>
+
+<p>在正常的系统使用自然不会报错，不过我替换了 Windows 的字体、</p>
+<p>报错提示我查看 CBS.log（<del>不过这个文件包含太多无效的信息</del>）</p>
+<p><strong>使用以下指令获取报错文件的位置</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">findstr /c:<span class="string">&quot;[SR]&quot;</span> %windir%\Logs\CBS\CBS.log &gt; <span class="string">&quot;%userprofile%\Desktop\sfcdetails.txt&quot;</span> </span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="4-x2F-19"><a href="#4-x2F-19" class="headerlink" title="4&#x2F;19"></a>4&#x2F;19</h4><p>最近研究了一下 VDHX 虚拟磁盘双系统</p>
+<p>使用 Dism++ 部署 Windows 11 的确非常方便</p>
+<p>我大致简述一下步骤</p>
+<ol>
+<li>准备一份 Windows 11 官方镜像</li>
+<li>备份一份 Windows 10 驱动</li>
+<li>释放 Windows 11 镜像到目标分区或虚拟磁盘</li>
+<li>重启享受全新的 Bug 11 ！</li>
+</ol>
+<p><strong>注意：</strong>在释放镜像时请勾选<strong>添加引导</strong>选项（也可之后使用 BCDBOOT 添加）</p>
+<p>​            推荐勾选 Compact OS 选项，大约可以节省 7G 左右的空间且几乎不影响性能 </p>
+<p>值得一提的，现在从微软官方下载镜像也十分方便了</p>
+<p>（<del>如果有空，再详细叙述一番</del>）</p>
 
       
     </div>
@@ -241,7 +346,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/03/22/windows-fonts/" class="post-title-link" itemprop="url">开端</a>
+            <a href="/2022/03/22/windows-fonts/" class="post-title-link" itemprop="url">Windows 低分屏字体优化</a>
         </h2>
 
         <div class="post-meta">
@@ -258,7 +363,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-17 13:54:38" itemprop="dateModified" datetime="2022-04-17T13:54:38+08:00">2022-04-17</time>
+                <time title="修改时间：2022-04-19 13:36:44" itemprop="dateModified" datetime="2022-04-19T13:36:44+08:00">2022-04-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,8 +386,123 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h3><p>前几年前就有了建立自己博客想法、</p>
-<p>不过，现在借助Hexo实现这一个<strong>愿望</strong>。</p>
+          <h3 id="Windows-低分屏字体优化"><a href="#Windows-低分屏字体优化" class="headerlink" title="Windows 低分屏字体优化"></a>Windows 低分屏字体优化</h3><p>关于低分屏字体优化这类教程网络上已经有很多了、</p>
+<p>所以我主要阐述一下我的经验、</p>
+<h4 id="MacType"><a href="#MacType" class="headerlink" title="MacType"></a>MacType</h4><p>该程序有多种加载方式，如<strong>托盘加载、服务加载和注册表模式</strong>。</p>
+<p>原理为使用 GDI 来替换系统字体渲染方式。</p>
+<p>在高中时曾经偶然试用过，当时的机器比较老并且使用托盘加载模式、</p>
+<p>所以很多程序绘制字体会有延迟当然现在托盘和服务模式依然存在这个问题就是了、</p>
+<p>此外，MacType 还和许多软件（如地平线5）不兼容，需要添加排除项</p>
+<p>比较完美的体验需要修改注册表，这里我没有再尝试了。</p>
+<p>我还是倾向不做大修改的方案、</p>
+<h4 id="noMeiryoUI"><a href="#noMeiryoUI" class="headerlink" title="noMeiryoUI"></a>noMeiryoUI</h4><p>这款软件也是通过修改注册表来实现替换字体，但没有改善 Windows 本身的渲染方式</p>
+<p>而且不是所有的程序都读取注册表来选择字体，所以体验会比较<strong>割裂</strong>。</p>
+<p>虽然替换很方便，不过在修改字体大小时会一并修改窗体的边距大小。</p>
+<p>但是这部分存在计算上的问题，所以修改后很容易触发一个拉大窗口边距的 Bug</p>
+<p>（实际上你可以在 Windows 中反复大尺度地修改字体大小也可以触发这个 Bug ）</p>
+<h4 id="NobleScarlet-amp-新版微软雅黑"><a href="#NobleScarlet-amp-新版微软雅黑" class="headerlink" title="NobleScarlet &amp; 新版微软雅黑"></a>NobleScarlet &amp; 新版微软雅黑</h4><p>偶然在知乎上看到关于新微软雅黑的讨论，我也就试用过一段时间。</p>
+<p>缩放至少 125% 以上体验就不错了，其实这时候屏幕 PPI 也就上来了、</p>
+<p>然而在 100% 缩放下，由于该字体没有字形微调，字体内部笔画就会重叠。</p>
+<p>此外该字体网上还流传着一个版本，内部版本号为微软雅黑11.3、</p>
+<p>这个版本有字形微调，在 100% 缩放字体笔画清晰了。观感类似于 <strong>“瘦”</strong> 一点的微软雅黑</p>
+<h4 id="GaspHack"><a href="#GaspHack" class="headerlink" title="GaspHack"></a>GaspHack</h4><p>这个其实就是通过工具手动关闭微软雅黑的字形微调、</p>
+<p>和前面的新版微软雅黑一样：低缩放下笔画重叠，高缩放下显示内容少了。</p>
+<h4 id="超虚拟分辨率（VSR）-amp-DSR"><a href="#超虚拟分辨率（VSR）-amp-DSR" class="headerlink" title="超虚拟分辨率（VSR）&amp; DSR"></a>超虚拟分辨率（VSR）&amp; DSR</h4><p>改方案通过虚拟更高分辨率的显示器来欺骗显卡输出画面’、</p>
+<p>再通过特殊的优化算法高效地缩放画面，基本上可以不影响性能。</p>
+<p>不过你的显示器依然是低分屏幕，不缩放基本上是没法看。</p>
+<p>以下是我推荐的缩放比例</p>
+<p>200%缩放【对应1440p &amp; 1800p】</p>
+<p>300%缩放【对应2160p】</p>
+<p>兼容性和显示效果最好的方案、</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在 Windows 的低分屏下似乎是没有完美的字体的方案的，本质上就时屏幕 PPI 不足罢了</p>
+<p>如果真的对字体非常敏感，无脑入高分屏就是了。</p>
+<p>Windows 在200%（整数倍）的缩放下大部分的软件表现都很正常。</p>
+<h4 id="————"><a href="#————" class="headerlink" title="————"></a>————</h4><p>目前我选择的方案是新微软雅黑，修改的地方比较少就是了</p>
+<h4 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a><em>最终效果展示</em></h4><p><strong>Windows 属性</strong></p>
+<p><img src="/2022/03/22/windows-fonts/11.3.png" alt="属性"></p>
+<p><strong>桌面</strong></p>
+<p><img src="/2022/03/22/windows-fonts/%E6%A1%8C%E9%9D%A2.png" alt="桌面"></p>
+<p><strong>磁盘列表</strong></p>
+<p><img src="/2022/03/22/windows-fonts/%E5%8D%B7.png" alt="桌面"></p>
+<p><strong>C 盘目录</strong></p>
+<p><img src="/2022/03/22/windows-fonts/C%E7%9B%98%E7%9B%AE%E5%BD%95.png" alt="桌面"></p>
+<p><strong>设置页面</strong></p>
+<p><img src="/2022/03/22/windows-fonts/%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2.png" alt="桌面"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/22/about-me/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="LarX">
+      <meta itemprop="description" content="An Essay Pool">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HexO">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/22/about-me/" class="post-title-link" itemprop="url">关于本博客</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-22 22:48:28" itemprop="dateCreated datePublished" datetime="2022-03-22T22:48:28+08:00">2022-03-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-19 13:30:37" itemprop="dateModified" datetime="2022-04-19T13:30:37+08:00">2022-04-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Blogs/" itemprop="url" rel="index"><span itemprop="name">Blogs</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="关于本博客"><a href="#关于本博客" class="headerlink" title="关于本博客"></a>关于本博客</h3><p>前几年前就有了建立自己博客想法、</p>
+<p>不过，现在可以借助Hexo轻而易举的实现这一<strong>需求</strong>。</p>
 <blockquote>
 <p>Unless a man has talents to make something of himself, freedom in an <strong>irksome</strong> burden.</p>
 <p>— Eric Hoffer</p>
@@ -302,29 +522,8 @@
 <p>最近实在是过于烂漫了、</p>
 <p>很多事情放着放着就过去了、</p>
 <p>相较于直面困难，我还是选择被人遗忘么？</p>
-<h3 id="逸趣"><a href="#逸趣" class="headerlink" title="逸趣"></a>逸趣</h3><h4 id="系统扫描工具日志查看"><a href="#系统扫描工具日志查看" class="headerlink" title="系统扫描工具日志查看"></a>系统扫描工具日志查看</h4><p>最近由于在咸鱼挂了台旧电脑，我学习了dism++的相关知识。</p>
-<p>除了将旧电脑的系统在保留驱动的情况下部署到Windows10 21H2之外</p>
-<p>（该操作在Dism++下相当简单，此外Windows11和Windows10的驱动完全通用）<del>11不就是换了个皮肤吗？</del></p>
-<p>我也偶然学习了SFC修复工具的使用（<del>实际上只学了一句指令</del>）</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SFC /scannow</span><br></pre></td></tr></table></figure>
-
-<p>在正常的系统使用自然不会报错，不过我替换了Windows的字体、</p>
-<p>虽然报错提示我查看CBS.log（<del>不过这个文件包含太多无效的信息</del>）</p>
-<p><strong>使用以下指令获取报错文件的位置</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">findstr /c:<span class="string">&quot;[SR]&quot;</span> %windir%\Logs\CBS\CBS.log &gt; <span class="string">&quot;%userprofile%\Desktop\sfcdetails.txt&quot;</span> </span><br></pre></td></tr></table></figure>
-
-<h4 id="Windows-低分屏字体优化"><a href="#Windows-低分屏字体优化" class="headerlink" title="Windows 低分屏字体优化"></a>Windows 低分屏字体优化</h4><p>这些文章网络上已经有很多了，我在此着重我的经验</p>
-<p>关于MacType，几年前也曾尝试过这款软件，不过偶尔会失效还伴随着崩溃和卡顿😂</p>
-<p>关于noMeiryoUI，这个软件虽然替换很方便，不过体验割裂并且存在一个会拉大窗口边距的BUG。</p>
-<p>关于GaspHack，这个和替换NobleScarlet差不多，字体在低分屏下依然是模糊的。</p>
-<p>关于替换字体，偶然在知乎上看到关于新微软雅黑的讨论，我也试用过一段时间的NobleScarlet。不过在有些软件里文字会非常模糊，即使是桌面UI下的字体，仔细看也可以发现部分字体内部的崩塌。后续认识了字体的Hinting，NobleScarlet是无Hinting字体，在低分屏下表现不佳。于是我又花了点时间认识了带Hinting的更纱黑体和思源雅黑，不过更纱黑体的西文部分在WIndowsUI下表现不佳，而中文部分在小尺寸下虽然清晰不过也失去了思源的美了（<del>此外要在WIndows上使用黑纱作为字体还需要修改字体文件信息，这部分已经有很多人的经验了</del>）</p>
-<p>之后偶然间发现NobleScarlet的字体版本信息为微软雅黑7.0.1(Github版本)、11.1.3(民间流传)、</p>
-<p>于是我又顺腾摸瓜的认识了<strong>微软雅黑11.3</strong>，这个版本的Hinting不错。体验比思源还要好。</p>
-<p>总结一下，在Windows的低分屏下似乎是没有完美的字体的方案的，所谓的微软雅黑11.3，也不过是微软的“胖”字体变“瘦”了罢。<strong>想要清晰的字体体验，只有高分屏一个选择</strong>。</p>
-<p><em>最终效果展示</em></p>
-<p><img src="/2022/03/22/windows-fonts/11.3.png" alt="属性"></p>
-<h4 id="尾端"><a href="#尾端" class="headerlink" title="尾端"></a>尾端</h4><p>此前我也研究过一些有趣的小玩意、</p>
-<p>抽点时间会把剩下的文件上传。</p>
+<p>说起来在 Github Pages 上部署 Hexo 也不算什么高大上的技术、</p>
+<p>果然要做一些更有意义的事比较好吧、</p>
 
       
     </div>
@@ -375,7 +574,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-17 14:02:04" itemprop="dateModified" datetime="2022-04-17T14:02:04+08:00">2022-04-17</time>
+                <time title="修改时间：2022-04-19 13:31:10" itemprop="dateModified" datetime="2022-04-19T13:31:10+08:00">2022-04-19</time>
               </span>
 
           
@@ -389,7 +588,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>欢迎使用<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>!！这是博客的第一篇上传。检索<a target="_blank" rel="noopener" href="https://hexo.io/docs/">官方文档</a>以获取更多相关信息。如果你在使用Hexo中遇到麻烦，你随时可在<a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">欸难杂症</a>寻找答案，或者你可以在<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>询问我。</p>
+          <p>欢迎使用<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>!！这是博客的第一篇上传。检索<a target="_blank" rel="noopener" href="https://hexo.io/docs/">官方文档</a>以获取更多相关信息。如果你在使用 Hexo 中遇到麻烦，你随时可在<a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">欸难杂症</a>寻找答案，或者你可以在<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>询问我。</p>
 <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一篇文章"><a href="#创建一篇文章" class="headerlink" title="创建一篇文章"></a>创建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>更多信息:<a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -485,18 +684,18 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
