@@ -153,6 +153,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/20/vhd-linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="LarX">
+      <meta itemprop="description" content="分享配置、踩坑经验">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LarXの領域">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/20/vhd-linux/" class="post-title-link" itemprop="url">vhd-linux</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-20 11:03:23 / 修改时间：11:58:22" itemprop="dateCreated datePublished" datetime="2022-04-20T11:03:23+08:00">2022-04-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="部署-Manjaro-到-VHD-并且在物理机上引导"><a href="#部署-Manjaro-到-VHD-并且在物理机上引导" class="headerlink" title="部署 Manjaro 到 VHD 并且在物理机上引导"></a>部署 Manjaro 到 VHD 并且在物理机上引导</h2><h4 id="为什么需要多系统"><a href="#为什么需要多系统" class="headerlink" title="为什么需要多系统"></a>为什么需要多系统</h4><p>如果你想享受多系统切换的爽快，同时又不想破坏已经分区了的磁盘结构，那这款方案你一定不要错过！使用 VHD 安装 Linux 有如下好处。</p>
+<blockquote>
+<ol>
+<li>系统是在真实物理机上运行，并不是在虚拟机里运行，几乎没有性能损失。</li>
+<li>同一个 VHD&#x2F;VDI 文件既可以在 Legacy BIOS 模式下启动，也可以在 UEFI 模式下启动。</li>
+<li>Linux 系统无需独占一个磁盘或者分区，相当于把一个完整的 Linux 系统放在一个文件里。</li>
+<li>可以在磁盘里放多个系统的文件，比如 Deepin、UOS、Ubuntu、Arch 等系统的 VHD 文件，在启动时选择系统，不用了就把对应的 VHD 文件删除即可。</li>
+<li>由于 Linux 强大的兼容性，更换设备之后 VHD 系统也可以非常方便的移动，再也不需要反复备份、拷贝系统。</li>
+<li><del>可以在启动电脑时秀一秀</del></li>
+</ol>
+<p>部分<strong>摘选</strong>自 <a target="_blank" rel="noopener" href="https://ventoy.net/cn/plugin_vtoyboot.html">Ventory Vdisk 插件介绍</a></p>
+</blockquote>
+<h4 id="已知的困境"><a href="#已知的困境" class="headerlink" title="已知的困境"></a>已知的困境</h4><p>在VHD上部署 Windows 很早之前就受到了微软官方支持，但是想要在物理机上引导 VHD 中的 Linux 系统却十分困难，因为 Linux 内核并非原生支持 VHD 。</p>
+<h4 id="实现的原理"><a href="#实现的原理" class="headerlink" title="实现的原理"></a>实现的原理</h4><p>要让 Linux 内核支持 VHD，需要添加相应的模块并重新编译内核。实现的过程比较麻烦并且每一次更新内核都需要重新修改编译。如果想要进一步了解原理，可以看看这篇博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41827547/article/details/88970773">安装Linux的VHD系统指南</a>。</p>
+<h4 id="便捷的方案"><a href="#便捷的方案" class="headerlink" title="便捷的方案"></a>便捷的方案</h4><p>好在国人开发的 Ventory 中进一步考虑到多系统的需求，将内核编译的过程自动化并且提供更方便的引导支持。<a target="_blank" rel="noopener" href="https://ventoy.net/cn/plugin_vtoyboot.html">Ventory Vdisk</a> 提供的资料已经非常全面，下面是我安装配置的经历。</p>
+<h3 id="安装-amp-配置"><a href="#安装-amp-配置" class="headerlink" title="安装 &amp; 配置"></a>安装 &amp; 配置</h3><h4 id="部署-Manjaro-到-VHD"><a href="#部署-Manjaro-到-VHD" class="headerlink" title="部署 Manjaro 到 VHD"></a>部署 Manjaro 到 VHD</h4><h4 id="在系统下执行-vtoyboot-脚本"><a href="#在系统下执行-vtoyboot-脚本" class="headerlink" title="在系统下执行 vtoyboot 脚本"></a>在系统下执行 vtoyboot 脚本</h4><h4 id="关于启动后的系统升级"><a href="#关于启动后的系统升级" class="headerlink" title="关于启动后的系统升级"></a>关于启动后的系统升级</h4><p><del>先搁着</del></p>
+<blockquote>
+<p>参考资料</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://ventoy.net/cn/plugin_vtoyboot.html">Plugin.VtoyBoot.Ventoy</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41827547/article/details/88970773">安装 Linux 的 VHD 系统指南</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/Initrd">initrd - 维基百科，自由的百科全书 (wikipedia.org)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/oloroso/p/6385398.html">linux下挂载VHD等虚拟磁盘文件 - 乌合之众 - 博客园 (cnblogs.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://bbs.pcbeta.com/viewthread-1099053-1-1.html">VHD应该这么玩！以前的都弱爆了!（8月20日新增启动菜单自动还原）-远景论坛-微软极客社区 (pcbeta.com)</a></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/17/defender/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -455,7 +548,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-19 23:48:14" itemprop="dateModified" datetime="2022-04-19T23:48:14+08:00">2022-04-19</time>
+                <time title="修改时间：2022-04-20 11:44:58" itemprop="dateModified" datetime="2022-04-20T11:44:58+08:00">2022-04-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -478,7 +571,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="关于本博客"><a href="#关于本博客" class="headerlink" title="关于本博客"></a>关于本博客</h3><p>前几年前就有了建立自己博客想法、</p>
+          <h3 id="关于本博客"><a href="#关于本博客" class="headerlink" title="关于本博客"></a>关于本博客</h3><ul>
+<li><h4 id="引"><a href="#引" class="headerlink" title="引"></a>引</h4></li>
+</ul>
+<p>前几年前就有了建立自己博客想法、</p>
 <p>不过，现在可以借助Hexo轻而易举的实现这一<strong>需求</strong>。</p>
 <blockquote>
 <p>Unless a man has talents to make something of himself, freedom in an <strong>irksome</strong> burden.</p>
@@ -496,6 +592,9 @@
 <p><strong>自由意味着责任，这就是为什么大多数人害怕它的原因</strong></p>
 <p><strong>— 箫伯纳</strong></p>
 </blockquote>
+<ul>
+<li><h4 id="絮絮叨叨"><a href="#絮絮叨叨" class="headerlink" title="絮絮叨叨"></a>絮絮叨叨</h4></li>
+</ul>
 <p>最近实在是过于烂漫了、</p>
 <p>很多事情放着放着就过去了、</p>
 <p>相较于直面困难，我还是选择被人遗忘么？</p>
@@ -661,14 +760,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

@@ -20,20 +20,17 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="系统扫描工具日志查看最近在咸鱼挂了台旧电脑，接触了点  Dism++ 。 除了将旧电脑的系统在保留驱动的情况下部署到Windows10 21H2之外，我也偶然使用了SFC修复工具进行系统映像完整度的验证。 实际上现在通过 Dism++ 工具部署系统相当简单在，此外 Windows 11 和 Windows 10 的驱动完全通用。所以安装系统最头疼的驱动问题也不复存在。11不就是换了个皮肤吗？ 1S">
-<meta property="og:type" content="article">
-<meta property="og:title" content="系统扫描工具日志查看">
-<meta property="og:url" content="http://example.com/2022/03/23/sfc-tools/index.html">
+  <meta name="description" content="分享配置、踩坑经验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LarXの領域">
+<meta property="og:url" content="http://example.com/categories/Linux/index.html">
 <meta property="og:site_name" content="LarXの領域">
-<meta property="og:description" content="系统扫描工具日志查看最近在咸鱼挂了台旧电脑，接触了点  Dism++ 。 除了将旧电脑的系统在保留驱动的情况下部署到Windows10 21H2之外，我也偶然使用了SFC修复工具进行系统映像完整度的验证。 实际上现在通过 Dism++ 工具部署系统相当简单在，此外 Windows 11 和 Windows 10 的驱动完全通用。所以安装系统最头疼的驱动问题也不复存在。11不就是换了个皮肤吗？ 1S">
+<meta property="og:description" content="分享配置、踩坑经验">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-23T04:01:45.000Z">
-<meta property="article:modified_time" content="2022-04-19T15:48:52.842Z">
 <meta property="article:author" content="LarX">
-<meta property="article:tag" content="系统">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/03/23/sfc-tools/">
+<link rel="canonical" href="http://example.com/categories/Linux/">
 
 
 <script id="page-configurations">
@@ -41,12 +38,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>系统扫描工具日志查看 | LarXの領域</title>
+  <title>分类: Linux | LarXの領域</title>
   
 
 
@@ -150,134 +147,57 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content category">
             
 
-    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/23/sfc-tools/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="LarX">
-      <meta itemprop="description" content="分享配置、踩坑经验">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LarXの領域">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          系统扫描工具日志查看
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-03-23 12:01:45" itemprop="dateCreated datePublished" datetime="2022-03-23T12:01:45+08:00">2022-03-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-19 23:48:52" itemprop="dateModified" datetime="2022-04-19T23:48:52+08:00">2022-04-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">Linux
+          <small>分类</small>
+        </h2>
+      </div>
 
       
-        <h3 id="系统扫描工具日志查看"><a href="#系统扫描工具日志查看" class="headerlink" title="系统扫描工具日志查看"></a>系统扫描工具日志查看</h3><p>最近在咸鱼挂了台旧电脑，接触了点  Dism++ 。</p>
-<p>除了将旧电脑的系统在保留驱动的情况下部署到Windows10 21H2之外，我也偶然使用了SFC修复工具进行系统映像完整度的验证。</p>
-<p>实际上现在通过 Dism++ 工具部署系统相当简单在，此外 Windows 11 和 Windows 10 的驱动完全通用。所以安装系统最头疼的驱动问题也不复存在。<del>11不就是换了个皮肤吗？</del></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SFC /scannow</span><br></pre></td></tr></table></figure>
-
-<p>在正常的系统使用自然不会报错，不过我替换了 Windows 的字体，报错提示查看 CBS.log（<del>不过这个文件包含太多无效的信息</del>）</p>
-<p><strong>使用以下指令获取报错文件的位置</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">findstr /c:<span class="string">&quot;[SR]&quot;</span> %windir%\Logs\CBS\CBS.log &gt; <span class="string">&quot;%userprofile%\Desktop\sfcdetails.txt&quot;</span> </span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="4-x2F-19"><a href="#4-x2F-19" class="headerlink" title="4&#x2F;19"></a>4&#x2F;19</h4><p>最近研究了一下 VDHX 虚拟磁盘双系统，使用 Dism++ 部署 Windows 11 的确非常方便。</p>
-<p>大致简述一下步骤</p>
-<ol>
-<li>准备一份 Windows 11 官方镜像</li>
-<li>备份一份 Windows 10 驱动</li>
-<li>释放 Windows 11 镜像到目标分区或虚拟磁盘</li>
-<li>重启享受全新的 Bug 11 ！</li>
-</ol>
-<p><strong>注意：</strong>在释放镜像时请勾选<strong>添加引导</strong>选项（也可之后使用 BCDBOOT 添加）</p>
-<p>​            推荐勾选 Compact OS 选项，大约可以节省 7G 左右的空间且几乎不影响性能 </p>
-<p>值得一提的，现在从微软官方下载镜像也十分方便了</p>
-<p>（<del>如果有空，再详细叙述一番</del>）</p>
-
+    <div class="collection-year">
+      <span class="collection-header">2022</span>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag"># 系统</a>
-          </div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2022-04-20T11:03:23+08:00"
+              content="2022-04-20">
+          04-20
+        </time>
+      </div>
 
-        
+      <div class="post-title">
+          <a class="post-title-link" href="/2022/04/20/vhd-linux/" itemprop="url">
+            <span itemprop="name">vhd-linux</span>
+          </a>
+      </div>
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2022/03/22/windows-fonts/" rel="prev" title="Windows 低分屏字体优化">
-      <i class="fa fa-chevron-left"></i> Windows 低分屏字体优化
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/04/17/defender/" rel="next" title="快速添加防病毒排除目录">
-      快速添加防病毒排除目录 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+    </header>
   </article>
+
+    </div>
+  </div>
   
   
+  
+
   
 
 
 
           </div>
           
-    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -324,7 +244,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B"><span class="nav-number">1.</span> <span class="nav-text">系统扫描工具日志查看</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-x2F-19"><span class="nav-number">1.1.</span> <span class="nav-text">4&#x2F;19</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -446,25 +365,6 @@
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : '1e810fb440654c8f4bd7',
-      clientSecret: '483f4617b5a001dc600fd5179b1856034cc48497',
-      repo        : 'anosora233.github.io',
-      owner       : 'anosora233',
-      admin       : ['anosora233'],
-      id          : 'ce0b770afc5472b34d4df61ab1406256',
-        language: 'zh-CN',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});
-</script>
 
 </body>
 </html>
