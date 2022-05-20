@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="分享配置、踩坑经验">
+  <meta name="description" content="?$?">
 <meta property="og:type" content="website">
 <meta property="og:title" content="LarXの領域">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="LarXの領域">
-<meta property="og:description" content="分享配置、踩坑经验">
+<meta property="og:description" content="?$?">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="LarX">
 <meta name="twitter:card" content="summary">
@@ -153,12 +153,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/20/n1-nas-samba/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="LarX">
+      <meta itemprop="description" content="?$?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LarXの領域">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/20/n1-nas-samba/" class="post-title-link" itemprop="url">利用校园网IPv6建立私人网盘</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-05-20 20:21:01 / 修改时间：20:51:01" itemprop="dateCreated datePublished" datetime="2022-05-20T20:21:01+08:00">2022-05-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OpenWRT/" itemprop="url" rel="index"><span itemprop="name">OpenWRT</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Samba-协议"><a href="#Samba-协议" class="headerlink" title="Samba 协议"></a>Samba 协议</h3><p>在OpenWRT里配置Samba服务器相当容易，不过默认的配置不能将服务器架设在外网上。如果想要把服务器架设在外网环境上，只需要在网络-端口转发处配置一下445和139的端口转发就好了。这里还有另一种方法</p>
+<p>在网络共享的编辑模板处有Samba开放的网络接口设置，默认是开放在br-lan上。不过校园内网口资源比较紧张，如图，我使用无线作为外网的接入口。此外，要想获取到校园网的IPv6地址，需要新建一个DHCPv6的接口且包括自定义接口@wan</p>
+<p><img src="/2022/05/20/n1-nas-samba/net.png" alt="net"></p>
+<p>将Samba服务器开放在无线接口上，如果只有一张无线网卡，默认的接口名称即为wlan0（注释默认设置并修改为wlan0）</p>
+<p><img src="/2022/05/20/n1-nas-samba/interfaces.png" alt="interfaces"></p>
+<p>如果你没有配置新用户，也可以直接运行用户以root权限登录（注释标红配置）</p>
+<p><img src="/2022/05/20/n1-nas-samba/root.png" alt="root"></p>
+<p>然后保存并应用，可以使用Nmap来进行端口扫描来检查修改是否成功</p>
+<p><img src="/2022/05/20/n1-nas-samba/nmap.png" alt="nmap"></p>
+<p>如图，状态为已开放。如果想要进一步方便的使用可以买一个域名。</p>
+<h3 id="可道云"><a href="#可道云" class="headerlink" title="可道云"></a>可道云</h3><h3 id="File-Browser"><a href="#File-Browser" class="headerlink" title="File Browser"></a>File Browser</h3><p>可道云和File Browser配置相当比较简单，此处不多赘述。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/20/vhd-linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="LarX">
-      <meta itemprop="description" content="分享配置、踩坑经验">
+      <meta itemprop="description" content="?$?">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -176,10 +254,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-04-20 11:03:23 / 修改时间：21:15:37" itemprop="dateCreated datePublished" datetime="2022-04-20T11:03:23+08:00">2022-04-20</time>
+              <time title="创建时间：2022-04-20 11:03:23" itemprop="dateCreated datePublished" datetime="2022-04-20T11:03:23+08:00">2022-04-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-20 19:39:35" itemprop="dateModified" datetime="2022-05-20T19:39:35+08:00">2022-05-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -201,7 +285,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="部署-Manjaro-到-VHD-并且在物理机上引导"><a href="#部署-Manjaro-到-VHD-并且在物理机上引导" class="headerlink" title="部署 Manjaro 到 VHD 并且在物理机上引导"></a>部署 Manjaro 到 VHD 并且在物理机上引导</h3><h4 id="为什么需要多系统"><a href="#为什么需要多系统" class="headerlink" title="为什么需要多系统"></a>为什么需要多系统</h4><p>如果你想享受多系统切换的爽快，同时又不想破坏已经分区了的磁盘结构，那这款方案你一定不要错过！使用 VHD 安装 Linux 有如下好处。</p>
+          <h3 id="为什么需要多系统"><a href="#为什么需要多系统" class="headerlink" title="为什么需要多系统"></a>为什么需要多系统</h3><p>如果你想享受多系统切换的爽快，同时又不想破坏已经分区了的磁盘结构，那这款方案你一定不要错过！使用 VHD 安装 Linux 有如下好处。</p>
 <blockquote>
 <ol>
 <li>系统是在真实物理机上运行，并不是在虚拟机里运行，几乎没有性能损失。</li>
@@ -251,7 +335,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="LarX">
-      <meta itemprop="description" content="分享配置、踩坑经验">
+      <meta itemprop="description" content="?$?">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -277,7 +361,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-19 23:48:35" itemprop="dateModified" datetime="2022-04-19T23:48:35+08:00">2022-04-19</time>
+                <time title="修改时间：2022-05-20 19:39:14" itemprop="dateModified" datetime="2022-05-20T19:39:14+08:00">2022-05-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -331,7 +415,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="LarX">
-      <meta itemprop="description" content="分享配置、踩坑经验">
+      <meta itemprop="description" content="?$?">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -357,7 +441,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-20 11:05:50" itemprop="dateModified" datetime="2022-04-20T11:05:50+08:00">2022-04-20</time>
+                <time title="修改时间：2022-05-20 19:39:29" itemprop="dateModified" datetime="2022-05-20T19:39:29+08:00">2022-05-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -427,7 +511,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="LarX">
-      <meta itemprop="description" content="分享配置、踩坑经验">
+      <meta itemprop="description" content="?$?">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -453,7 +537,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-20 11:44:58" itemprop="dateModified" datetime="2022-04-20T11:44:58+08:00">2022-04-20</time>
+                <time title="修改时间：2022-05-20 19:39:06" itemprop="dateModified" datetime="2022-05-20T19:39:06+08:00">2022-05-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -529,7 +613,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="LarX">
-      <meta itemprop="description" content="分享配置、踩坑经验">
+      <meta itemprop="description" content="?$?">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -555,7 +639,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-19 23:48:57" itemprop="dateModified" datetime="2022-04-19T23:48:57+08:00">2022-04-19</time>
+                <time title="修改时间：2022-05-20 19:39:41" itemprop="dateModified" datetime="2022-05-20T19:39:41+08:00">2022-05-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -578,7 +662,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Windows-低分屏字体优化"><a href="#Windows-低分屏字体优化" class="headerlink" title="Windows 低分屏字体优化"></a>Windows 低分屏字体优化</h3><p>关于低分屏字体优化这类教程网络上已经有很多经验了，本文主要阐述一下自己的修改历程。</p>
+          <p>关于低分屏字体优化这类教程网络上已经有很多经验了，本文主要阐述一下自己的修改历程。</p>
 <h4 id="MacType"><a href="#MacType" class="headerlink" title="MacType"></a>MacType</h4><p>该程序有多种加载方式，如<strong>托盘加载、服务加载和注册表模式</strong>，原理为使用 GDI 来代替系统字体的渲染方式。我曾在高中时曾经偶然用过，当时的机器比较老并且使用托盘加载模式，所以很多程序绘制字体会有延迟。当然现在托盘和服务模式依然存在这个问题就是了。此外，MacType 还和许多软件（如地平线5）不兼容，需要添加排除项。比较完美的体验需要修改注册表，这里我没有再尝试了，我还是倾向不做大修改的方案就是了。</p>
 <h4 id="noMeiryoUI"><a href="#noMeiryoUI" class="headerlink" title="noMeiryoUI"></a>noMeiryoUI</h4><p>这款软件也是通过修改注册表来实现替换字体，但没有改善 Windows 本身的渲染方式。而且不是所有的程序都读取注册表来选择字体，所以体验会比较<strong>割裂</strong>。虽然替换很方便，不过在修改字体大小时会一并修改窗体的边距大小。但是该程序这部分存在计算上的问题，所以修改后很容易触发一个拉大窗口边距的 Bug（实际上你可以在 Windows 中反复大尺度地修改字体大小也可以触发这个 Bug ）。</p>
 <h4 id="NobleScarlet-amp-新版微软雅黑"><a href="#NobleScarlet-amp-新版微软雅黑" class="headerlink" title="NobleScarlet &amp; 新版微软雅黑"></a>NobleScarlet &amp; 新版微软雅黑</h4><p>偶然在知乎上看到关于新微软雅黑的讨论，我也就试用过一段时间。替换字体后，缩放至少 125% 以上体验就不错了，其实这时候屏幕 PPI 也就上来了。然而在 100% 缩放下，由于该字体没有字形微调，字体内部笔画就会重叠。此外该字体网上还流传着一个版本，内部版本号为微软雅黑11.3.0。这个版本有字形微调，在 100% 缩放字体笔画清晰了。观感类似于 <strong>“瘦”</strong> 一点的微软雅黑。</p>
@@ -624,7 +708,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="LarX">
-      <meta itemprop="description" content="分享配置、踩坑经验">
+      <meta itemprop="description" content="?$?">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -650,7 +734,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-19 23:48:42" itemprop="dateModified" datetime="2022-04-19T23:48:42+08:00">2022-04-19</time>
+                <time title="修改时间：2022-05-20 19:39:21" itemprop="dateModified" datetime="2022-05-20T19:39:21+08:00">2022-05-20</time>
               </span>
 
           
@@ -753,25 +837,25 @@
     <img class="site-author-image" itemprop="image" alt="LarX"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">LarX</p>
-  <div class="site-description" itemprop="description">分享配置、踩坑经验</div>
+  <div class="site-description" itemprop="description">?$?</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
